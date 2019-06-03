@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio src="quiz.mp3"></audio>
+    <p id="a"></p>
+    <script>
+        var spacename = prompt("Spacekeyの名前を入力してください")
+        var entername = prompt("Enterkeyの名前を入力してください")
+        document.onkeydown = function (e) {
+            var keyCode = false;
+
+            if (e) event = e;
+
+            if (event) {
+                if (event.keyCode) {
+                    keyCode = event.keyCode;
+                } else if (event.which) {
+                    keyCode = event.which;
+                }
+            }
+            if(keyCode == 32){
+                document.querySelector("audio").play();
+                document.getElementById("a").append(`${spacename}
+                `)
+            }else if(keyCode == 13){
+                document.querySelector("audio").play();
+                document.getElementById("a").append(`${entername}
+                `)
+            }
+            
+        };
+    </script>
+</body>
